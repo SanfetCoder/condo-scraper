@@ -9,11 +9,8 @@ def root():
     if request.method == "GET":
         try:
             province = request.args.get('province')
-            print(province)
             condos = get_condo_detail(province) if province is not None else []
             print(condos)
             return render_template('index.html', condos = condos)
         except Exception as e:
             return str(e), 400
-        
-      
