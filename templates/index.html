@@ -22,7 +22,7 @@
   <body
     class="container-fluid vh-100 d-flex flex-column justify-content-center align-items-center"
   >
-    <h1 class="fw-semibold">ค้นหาคอนโด</h1>
+    <h1 class="fw-semibold mt-5">ค้นหาคอนโด</h1>
     <form id="form" class="w-50 mt-3">
       <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1"
@@ -45,10 +45,12 @@
 
     <!-- condo list -->
     {% if condos|length > 0 %}
-        <div class="overflow-y-scroll justify-content-between gap-3 my-5 w-75 grid-container" id="condoList">
+        <div class="overflow-y-scroll justify-content-between gap-3 mb-5 w-75 grid-container p-5" id="condoList">
             {% for condo in condos %}
                 <div class="condo-card">
-                    <p class="fw-semibold">{{condo}}</p>
+                    <img src="{{condo["image"]}}" alt="">
+                    <p class="fw-semibold overflow-hidden">{{condo["title"]}}</p>
+                    <p class="fw-semibold overflow-hidden">{{condo["price"]}}</p>
                 </div>
             {% endfor %}
         </div>
