@@ -26,8 +26,12 @@
 .condo-card img {
   width: 100%;
   height: 50%;
-  background-size: contain;
+  background-size: cover;
   border-radius: 15px;
+}
+
+.condo-card__detail {
+  height: 200px;
 }
 
 .condo-card:hover {

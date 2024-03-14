@@ -20,10 +20,14 @@ def get_condo_detail(province = 'กุรงเทพ'):
             condo_image = condo.find_all('img')[1]['src']
             # find the price of current condo
             condo_price = condo.find('div',{'class' : 'listing-cost'}).find('div').text
+            # condo link detail
+            condo_link = condo.find_all('a')[1]['href']
+            print(condo_link)
             serialized_condo = {
                 "title" : condo_title,
                 "image" : condo_image,
-                "price" : condo_price
+                "price" : condo_price,
+                "link" : condo_link
             }
             condos.append(serialized_condo)
         return condos

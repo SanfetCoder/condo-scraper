@@ -47,11 +47,13 @@
     {% if condos|length > 0 %}
         <div class="overflow-y-scroll justify-content-between gap-3 mb-5 w-75 grid-container p-5" id="condoList">
             {% for condo in condos %}
-                <div class="condo-card">
+            <a class="text-decoration-none" href="{{condo["link"]}}" target="_blank">
+                <div class="condo-card text-black ">
                     <img src="{{condo["image"]}}" alt="">
-                    <p class="fw-semibold overflow-hidden">{{condo["title"]}}</p>
-                    <p class="fw-semibold overflow-hidden">{{condo["price"]}}</p>
+                    <p class="fw-semibold condo-card__detail overflow-hidden m-0 ">{{condo["title"]}}</p>
+                    <p class="fw-semibold text-primary mt-auto m-0 fs-6">{{condo["price"]}}</p>
                 </div>
+            </a>
             {% endfor %}
         </div>
     {% else %}
