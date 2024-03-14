@@ -45,11 +45,13 @@
 
     <!-- condo list -->
     {% if condos|length > 0 %}
-        <ul id="condoList">
+        <div class="overflow-y-scroll justify-content-between gap-3 my-5 w-75 grid-container" id="condoList">
             {% for condo in condos %}
-                <li>{{ condo }}</li>
+                <div class="condo-card">
+                    <p class="fw-semibold">{{condo}}</p>
+                </div>
             {% endfor %}
-        </ul>
+        </div>
     {% else %}
         <p>Search for condos</p>
     {% endif %}
